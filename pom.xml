@@ -39,6 +39,23 @@
         <url>https://github.com/CatalpaFlat/module-pay</url>
         <connection>https://github.com/CatalpaFlat/module-pay.git</connection>
     </scm>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                    <compilerArgs>
+                        <arg>-extdirs</arg>
+                        <arg>${project.basedir}/src/lib</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <profiles>
         <profile>
             <id>release</id> <!-- 部署要用到 -->
@@ -87,6 +104,7 @@
                         </executions>
                     </plugin>
                 </plugins>
+
             </build>
             <distributionManagement>
                 <snapshotRepository>
